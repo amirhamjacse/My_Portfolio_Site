@@ -230,24 +230,32 @@ ScrollReveal().reveal('.section__subtitle', {duration: 2500, delay: 400})
 ScrollReveal().reveal('.about__container', {duration: 2000, delay: 400})
 ScrollReveal().reveal('.skills__container', {duration: 2000, delay: 50})
 ScrollReveal().reveal('.qualification__container', {duration: 2000, delay: 50})
-ScrollReveal().reveal('.certification__container', {duration: 2000, delay: 50})
 ScrollReveal().reveal('.projects__container', {duration: 2000, delay: 50})
 ScrollReveal().reveal('.blog__container', {duration: 2000, delay: 50})
 ScrollReveal().reveal('.contact__container', {duration: 2000, delay: 50})
 
-/*==================== TYPED JS ====================*/
-const typed_home = new Typed('#multiple-text', {
-    strings: ['AI Enginner Intern', 'Deep Learning Enthusiast'],
-    typeSpeed: 100,
-    backSpeed: 30,
-    backDelay: 1000,
-    loop: true,
-    });
+/*==================== OPTIONAL TYPED JS ====================*/
+if (typeof Typed !== 'undefined') {
+  const multipleText = document.querySelector('#multiple-text');
+  const multipleTextFooter = document.querySelector('#multiple-text-footer');
 
-const typed_footer = new Typed('#multiple-text-footer', {
-    strings: ['AI Enginner Intern', 'Deep Learning Enthusiast'],
-    typeSpeed: 100,
-    backSpeed: 30,
-    backDelay: 1000,
-    loop: true,
+  if (multipleText) {
+    new Typed('#multiple-text', {
+      strings: ['Full-Stack Developer', 'ERP/CRM Specialist'],
+      typeSpeed: 100,
+      backSpeed: 30,
+      backDelay: 1000,
+      loop: true,
     });
+  }
+
+  if (multipleTextFooter) {
+    new Typed('#multiple-text-footer', {
+      strings: ['Building Digital Solutions', 'Solving Real Problems'],
+      typeSpeed: 100,
+      backSpeed: 30,
+      backDelay: 1000,
+      loop: true,
+    });
+  }
+}
